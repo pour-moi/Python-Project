@@ -1,0 +1,1 @@
+check_score(user_card)
