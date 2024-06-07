@@ -5,7 +5,8 @@ from art import logo, vs
 def start_game():
     a = choice(data)
     b = choice(data)
-    game(a, b)
+    score = 0
+    game(a, b, score)
 
 def check_result(user_choice, a, b):
     print(logo)
@@ -16,8 +17,7 @@ def check_result(user_choice, a, b):
 
 print(logo)
 
-def game(a, b):
-    score = 0
+def game(a, b, score):
     print(f"Compare A: {a["name"]}, a {a["description"]}, from {a["country"]}")
     print(vs)
     print(f"Against B: {b["name"]}, a {b["description"]}, from {b["country"]}")
@@ -29,7 +29,7 @@ def game(a, b):
         print(f"You are right! Your current score: {score}")
         a = b
         b = choice(data) 
-        game(a, b)
+        game(a, b, score)
     else:
         print(f"Sorry that's wrong :( Final score {score}")
 
